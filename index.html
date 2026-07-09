@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Cristian Nieves Choez</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Contenedor de Botones Operativos */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-download {
+            background-color: #2b6cb0;
+        }
+
+        .btn-download:hover {
+            background-color: #2c5282;
+        }
+
+        .btn-print {
+            background-color: #4a5568;
+        }
+
+        .btn-print:hover {
+            background-color: #2d3748;
+        }
+
+        /* Tarjeta Principal del CV */
+        .cv-card {
+            background-color: white;
+            width: 100%;
+            max-width: 850px;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 34px;
+            margin: 0 0 8px 0;
+            color: #1a202c;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #4a5568;
+            margin: 0 0 18px 0;
+            font-weight: 500;
+        }
+
+        .contact-line {
+            font-size: 14px;
+            color: #718096;
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+
+        .contact-line a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estructura de dos columnas */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 45px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Contenedor de foto circular */
+        .profile-img-container {
+            width: 190px;
+            height: 190px;
+            background-color: #edf2f7;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-title-side {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a202c;
+            margin: 0 0 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        .side-text {
+            font-size: 14px;
+            color: #4a5568;
+            margin: 0 0 8px 0;
+            line-height: 1.5;
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-block {
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 20px;
+        }
+
+        .section-block:last-child {
+            border-bottom: none;
+        }
+
+        .section-title-main {
+            font-size: 19px;
+            font-weight: 700;
+            color: #1a202c;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.3px;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2b6cb0;
+            margin: 0 0 4px 0;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            color: #718096;
+            margin: 0 0 10px 0;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Reglas de optimización para impresión limpia */
+        @media print {
+            .action-buttons {
+                display: none;
+            }
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .cv-card {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Panel superior de interacción -->
+    <div class="action-buttons">
+        <!-- Reemplazar 'cv-CristianNieves.pdf' por la ruta real de su archivo PDF si lo sube -->
+        <a href="cv-CristianNieves.pdf" download="cv-CristianNieves.pdf" class="btn btn-download">📥 Descargar PDF</a>
+        <button class="btn btn-print" onclick="window.print()">🖨️ Imprimir CV</button>
+    </div>
+
+    <div class="cv-card">
+        <header>
+            <h1>Cristian Nieves Choez</h1>
+            <div class="subtitle">Estudiante de Desarrollo de Software | Especialista en Logística Editorial e Imprenta</div>
+            <div class="contact-line">
+                📞 0986784258 &nbsp;|&nbsp; 
+                ✉️ <a href="mailto:tu-correo@mail.com">cristian.nieves@mail.com</a> &nbsp;|&nbsp;
+                💻 <a href="#" target="_blank">github.com/tu-usuario</a>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="sidebar">
+                <div class="profile-img-container">
+                    <!-- Cambiar 'Foto_Cristian.jpg' por el nombre de su archivo de imagen -->
+                    <img src="nieves.jpg" alt="Cristian Nieves" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="font-size: 50px; color: #a0aec0; display: none;">👤</div>
+                </div>
+
+                <div>
+                    <h3 class="section-title-side">Datos personales</h3>
+                    <p class="side-text"><strong>Edad:</strong> 32 años</p>
+                    <p class="side-text"><strong>Estado civil:</strong> Soltero</p>
+                    <p class="side-text"><strong>Ubicación:</strong> Guayaquil, Ecuador</p>
+                </div>
+
+                <div>
+                    <h3 class="section-title-side">Habilidades</h3>
+                    <p class="side-text">• Lógica de Programación</p>
+                    <p class="side-text">• Gestión de Procesos</p>
+                    <p class="side-text">• Logística y Distribución</p>
+                    <p class="side-text">• Control de Calidad Gráfica</p>
+                </div>
+
+                <div>
+                    <h3 class="section-title-side">Idiomas</h3>
+                    <p class="side-text"><strong>Español:</strong> Nativo</p>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="content-area">
+                <div class="section-block">
+                    <h2 class="section-title-main">Perfil Profesional</h2>
+                    <p style="font-size: 14px; color: #4a5568; margin: 0; line-height: 1.6;">
+                        Profesional con 6 años de experiencia sólida en el sector de imprenta y diseño gráfico, desempeñándome en el área de mensajería, distribución y control operativo. Actualmente potencio mi perfil técnico cursando el tercer semestre de la carrera de Desarrollo de Software en el ITB, buscando integrar la tecnología y automatización en los procesos industriales y logísticos.
+                    </p>
+                </div>
+
+                <div class="section-block">
+                    <h2 class="section-title-main">Experiencia Laboral</h2>
+                    
+                    <div>
+                        <h4 class="item-title">Mensajero Operativo de Imprenta de Diseño Gráfico</h4>
+                        <div class="item-subtitle">Desde hace 6 años (Activo)</div>
+                        <ul>
+                            <li>Coordinación y distribución de material publicitario y editorial.</li>
+                            <li>Apoyo logístico en la cadena de entrega y atención a clientes de diseño gráfico.</li>
+                            <li>Gestión eficiente de rutas y tiempos de entrega críticos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h2 class="section-title-main">Educación y Formación</h2>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 class="item-title">Tecnólogo en Desarrollo de Software</h4>
+                        <div class="item-subtitle">Instituto Superior Tecnológico Bolivariano (ITB)</div>
+                        <p style="font-size: 13.5px; color: #718096; margin: 4px 0 0 0;">3er semestre en curso.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="item-title">Bachiller</h4>
+                        <div class="item-subtitle">Colegio Particular Mixto Alejandro Internacional</div>
+                        <p style="font-size: 13.5px; color: #718096; margin: 4px 0 0 0;">La Florida, Ecuador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
